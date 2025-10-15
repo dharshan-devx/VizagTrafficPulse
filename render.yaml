@@ -1,0 +1,26 @@
+services:
+  # Backend (Express + WebSockets + Python integration)
+  - type: web
+    name: vizag-traffic-pulse
+    env: node
+    plan: free
+    region: singapore
+    buildCommand: |
+      npm install
+      apt-get update && apt-get install -y python3 python3-pip
+      pip3 install --upgrade pip
+      pip3 install -r requirements.txt
+      npm run build
+    startCommand: npm run start
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  # Frontend (Vite client)
+  - type: web
+    name: vite-frontend
+    env: static
+    buildCommand: "cd client && npm install && npm run build"
+    staticPublishPath: client/dist
+    autoDeploy: true
