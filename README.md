@@ -1,4 +1,4 @@
-# 🚦 Vizag Traffic Pulse - Predictive Dashboard (Vercel Ready)
+# 🚦 Vizag Traffic Pulse - Predictive Dashboard
 
 A comprehensive traffic analysis and prediction dashboard for Visakhapatnam city, featuring real-time data processing, interactive visualizations, and Python-integrated machine learning analysis.
 
